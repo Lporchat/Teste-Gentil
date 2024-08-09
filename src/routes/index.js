@@ -1,6 +1,5 @@
 const express = require('express');
 const router = express.Router();
-const pool = require('../config/index');
 const PessoaController = require('../controller/pessoa');
 const validateCPF = require('../utils/valideteCPF');
 
