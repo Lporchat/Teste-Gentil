@@ -1,0 +1,149 @@
+{
+	"info": {
+		"_postman_id": "eff4864e-7dd4-4757-86a9-f9bc0458be0f",
+		"name": "Gentil",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18451156"
+	},
+	"item": [
+		{
+			"name": "Buscar todas as pessoas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/pessoas/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"pessoas",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar uma pessoa",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/pessoa/:idPessoa",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"pessoa",
+						":idPessoa"
+					],
+					"variable": [
+						{
+							"key": "idPessoa",
+							"value": "6",
+							"description": "ID da pessoa"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Criação de pessoa",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"cpf\": \"111.111.111-111\",\r\n\t\"nome\": \"Gentil\",\r\n\t\"dataNascimento\": \"2013-01-15\",\r\n\t\"salario\": 3500,\r\n\t\"observacoes\": \"teste\",\r\n\t\"nomeMae\": \"Mãe Gentil\",\r\n\t\"nomePai\": \"Pai Gentil\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/pessoa/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"pessoa",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Atualização da pessoa",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"cpf\": \"111.111.111-111\",\r\n\t\"nome\": \"Gentil\",\r\n\t\"dataNascimento\": \"2013-01-15\",\r\n\t\"salario\": 3500,\r\n\t\"observacoes\": \"teste\",\r\n\t\"nomeMae\": \"Mãe Gentil\",\r\n\t\"nomePai\": \"Pai Gentil\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/pessoa/:idPessoa",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"pessoa",
+						":idPessoa"
+					],
+					"variable": [
+						{
+							"key": "idPessoa",
+							"value": "6",
+							"description": "ID da pessoa"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deleção de pessoa",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/pessoa/:idPessoa",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"pessoa",
+						":idPessoa"
+					],
+					"variable": [
+						{
+							"key": "idPessoa",
+							"value": "6",
+							"description": "ID da pessoa"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
