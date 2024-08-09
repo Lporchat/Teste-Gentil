@@ -9,6 +9,8 @@ class PessoaController {
 
     const [results] = await connection.query('CALL GetPessoa(?)', [idPessoa])
 
+    connection.release();
+
     return results[0][0]
   }
 
@@ -17,6 +19,7 @@ class PessoaController {
 
     const [results] = await connection.query('CALL GetAllPessoas()')
 
+    connection.release();
     return results[0]
   }
 
@@ -25,6 +28,7 @@ class PessoaController {
 
     const [results] = await connection.query('CALL CreatePessoa(?, ?, ?, ?, ?, ?, ?)',
       [nome, dataNascimento, salario, observacoes, nomeMae, nomePai, cpf])
+    connection.release();
 
     console.log('IDPessoa: ' + results[0][0].idPessoa)
   }
@@ -35,8 +39,9 @@ class PessoaController {
     const [results] = await connection.query('CALL PutPessoa(?, ?, ?, ?, ?, ?, ?, ?)',
       [idPessoa, nome, dataNascimento, salario, observacoes, nomeMae, nomePai, cpf])
 
-    console.log('Status: ' + results[0][0].status)
+    connection.release();
 
+    console.log('Status: ' + results[0][0].status)
   }
 
   async DelPessoa(idPessoa) {
@@ -44,6 +49,8 @@ class PessoaController {
 
     const [results] = await connection.query('CALL DelPessoa(?)',
       [idPessoa])
+
+    connection.release();
 
     console.log('Status: ' + results[0][0].status)
 
